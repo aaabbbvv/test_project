@@ -1,0 +1,10 @@
+.idea/
+/static_root/
+/media_root/
+/logs/
+/media/
+*.pyc
+*.pid
+*.sock
+
+
