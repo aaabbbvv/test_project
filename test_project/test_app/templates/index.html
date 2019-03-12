@@ -30,12 +30,10 @@
                 <td>{{ order.created_date|safe }}</td>
                 <td>{{ order.total_price|safe }}</td>
                 {% for item in order.items %}
-{#                <td>#}
                     <td>{{ item.id|safe }}</td>
                     <td>{{ item.product_name|safe }}</td>
                     <td>{{ item.product_price|safe }}</td>
                     <td>{{ item.amount|safe }}</td>
-{#                </td>#}
                 {% endfor %}
              </tr>
          {% endfor %}
