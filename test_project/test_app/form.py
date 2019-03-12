@@ -5,9 +5,7 @@ from django.forms import DateInput
 
 
 class DateForm(forms.Form):
-    start_date = forms.DateTimeField(required=False, widget=DateInput(attrs={'type': 'datetime-local',
-                                                                             'label': 'Start'}),
-                                     initial=datetime.date.today(), localize=True)
-    finish_date = forms.DateTimeField(required=False, widget=DateInput(attrs={'type': 'datetime-local',
-                                                                              'label': 'Finish'}),
-                                     initial=datetime.date.today(), localize=True)
+    start_date = forms.DateTimeField(required=True, widget=DateInput(attrs={'type': 'datetime-local',
+                                                                             'label': 'Start'}))
+    finish_date = forms.DateTimeField(required=True, widget=DateInput(attrs={'type': 'datetime-local',
+                                                                             'label': 'Finish'}))

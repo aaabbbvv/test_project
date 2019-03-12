@@ -11,7 +11,7 @@ class Command(BaseCommand):
         parser.add_argument('count', nargs='*')
 
     def handle(self, *args, **options):
-        print(options)
+
         for i in range(1, int(options['count'][0]) + 1):
             tz = get_current_timezone()
             created_date = tz.localize(datetime.strptime('01.01.2018 09:00', '%m.%d.%Y %H:%M'))

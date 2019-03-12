@@ -8,7 +8,7 @@ class Order(models.Model):
     created_date = models.DateTimeField(verbose_name='Date')
 
     def __str__(self):
-        return '{}'.format(self.number)
+        return str(self.number)
 
     class Meta:
         verbose_name = 'Order'
@@ -22,7 +22,7 @@ class OrderItem(models.Model):
     order = models.ForeignKey(Order, related_name='order', verbose_name='Order', on_delete=models.CASCADE)
 
     def __str__(self):
-        return '{}'.formats(self.product_name)
+        return self.product_name
 
     class Meta:
         verbose_name = 'Order Item'
