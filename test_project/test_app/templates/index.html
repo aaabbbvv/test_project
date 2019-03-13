@@ -8,14 +8,15 @@
 {# <input type="time">#}
 <form action="" method="post" novalidate>
      {% csrf_token %}
-   <div>{{ form.start_date }}</div>
-   <div>{{ form.finish_date }}</div>
+   <div>{{ form.start_date}}</div>
+   <div>{{ form.finish_date}}</div>
 
     <button >Отправить</button>
 </form>
   <table border="1">
    <caption></caption>
    <tr>
+       <th></th>
     <th>ID</th>
     <th>НОМЕР</th>
     <th>ДАТА</th>
@@ -27,13 +28,11 @@
               <td>
                 <td>{{ order.id|safe }}</td>
                 <td>{{ order.number|safe }}</td>
-                <td>{{ order.created_date|safe }}</td>
+                <td>{{ order.created_date }}</td>
                 <td>{{ order.total_price|safe }}</td>
                 {% for item in order.items %}
-                    <td>{{ item.id|safe }}</td>
-                    <td>{{ item.product_name|safe }}</td>
-                    <td>{{ item.product_price|safe }}</td>
-                    <td>{{ item.amount|safe }}</td>
+                    <td>{{ item|safe }}</td>
+
                 {% endfor %}
              </tr>
          {% endfor %}

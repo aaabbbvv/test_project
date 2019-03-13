@@ -19,7 +19,7 @@ class Command(BaseCommand):
                                                 created_date=created_date + timedelta(hours=i))
             for j in range(1, random.randint(1, 5) + 1):
                 models.OrderItem.objects.create(order=order,
-                                                product_name='Товар-{}'.format(i),
+                                                product_name='Товар-{}'.format(j),
                                                 product_price=random.randint(100, 9999),
                                                 amount=random.randint(1, 10)
                                                 )
